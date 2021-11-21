@@ -72,13 +72,16 @@
 
 	            return  dateString + timeString; 
             } 
+            function popup(){
+                window.open("event.html", "레이아웃 대회", "width=700px, height=400px scrollbars=yes");
+            }
 
 
     </script>
 
 
 </head>
-<body>
+<body onload="popup();">
     <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large">Close ×</button>
        <div class="w3-dropdown-hover">
