@@ -9,7 +9,46 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d3e39a72570784c11fbd646e534a16a"></script>
+
     <script>
+        function getGeolocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showLocation);
+            }
+        }
+        function showLocation(location) {
+            let lat=0.0, long=0.0;
+            lat  =35.268712;
+            long =128.865941;
+            var container = document.getElementById('map');
+		    var options = {
+			center: new kakao.maps.LatLng(lat, long),
+			level: 3
+		    };
+
+		    var map = new kakao.maps.Map(container, options);
+            // 마커가 표시될 위치
+            var markerPosition  = new kakao.maps.LatLng(lat, long); 
+
+            // 마커를 생성
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+            // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+            var mapTypeControl = new kakao.maps.MapTypeControl();
+
+
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+            // 줌 컨트롤을 생성합니다
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+            }
         function login(){
             let id = document.getElementById("id").value;
             let pw = document.getElementById("pw").value;
@@ -81,7 +120,7 @@
 
 
 </head>
-<body onload="popup();">
+<body onload="popup(); getGeolocation();">
     <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large">Close ×</button>
        <div class="w3-dropdown-hover">
@@ -125,8 +164,20 @@
             </div>
           </div>
           <div class="w3-dropdown-hover">
+            <button class="w3-button">어항 내부 list <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="./list.html" class="w3-bar-item w3-button">물고기 list</a>
+
+            </div>
+          </div>
+          
+
+
+
+          <div class="w3-dropdown-hover">
             <button class="w3-button">마이페이지 <i class="fa fa-caret-down"></i></button>
             <div class="w3-dropdown-content w3-bar-block">
+              <a href="./add.html" class="w3-bar-item w3-button">장바구니</a>
               <a href="#" class="w3-bar-item w3-button">주문 조회</a>
               <a href="#" class="w3-bar-item w3-button">1:1 문의</a>
             </div>
@@ -139,15 +190,15 @@
     </div>
     <div class="container">
         <header>
-            <img src="./photo/logo.png" alt="logo" width="200px">
+            <a href="./index.html"><img src="./photo/logo.png" alt="logo" width="200px"></a>
         </header>
         <nav>
                 <ul>
-                    <li><a href="#생물">생물</a></li>
-                    <li><a href="#수초">수초</a></li>
-                    <li><a href="#용품">용품</a></li>
-                    <li><a href="#갤러리">갤러리</a></li>
-                    <li><a href="#마이페이지">마이페이지</a></li>
+                    <li><a href="./fish.html">생물</a></li>
+                    <li><a href="./plant.html">수초</a></li>
+                    <li><a href="./product.html">용품</a></li>
+                    <li><a href="./register.html">갤러리</a></li>
+                    <li><a href="./add.html">마이페이지(장바구니)</a></li>
                 </ul>
             </nav>
         <section>
@@ -227,6 +278,8 @@
                     <a href="https://namu.wiki/w/%EA%B4%80%EC%83%81%EC%96%B4#s-4.3.5" target="_blank">관리 정보</a> <br>
                     
             </div>
+ 
+
 
 
             <h2>현재 시간</h2>
@@ -252,6 +305,8 @@
             <h3>5만원 이상 결제시<br>2~6개월 무이자 할부<br><img src="./photo/credit-card.png" alt="card" width="150"></h3>
             <h3><a href="https://namu.wiki/w/%EA%B4%80%EC%83%81%EC%96%B4#s-4.3.5.4" target="_blank">물고기 입수 시 주의사항</a><br><img src="./photo/fish-bowl.png" alt="fish" width="150"></h3>
             <h4>폐사할 경우 적립금 보상<br><img src="./photo/fishbone .png" alt="die" width="150"></h4>
+            <h3>매장 위치</h5><div id="map" style="width:100%;height:300px;"></div>
+
          
             
 
@@ -275,7 +330,7 @@
                    
                     <h5> Follow Us</h5>
                     <a href="https://www.facebook.com/profile.php?id=100008326122713"><i class="fab fa-facebook" style="font-size:30px;color:white"></i></a>
-                    <a href="https://www.instagram.com/minseok8534/"><i class="fab fa-instagram" style="font-size:30px;color:white"></i></a>
+                    <a href="https://www.instagram.com/minseok2000001/"><i class="fab fa-instagram" style="font-size:30px;color:white"></i></a>
                   
                     
                 </div>
@@ -288,7 +343,7 @@
 
 
 
-                    위치: 경남 김해시 가야로 123 1층
+                    위치: 경남 김해시 가야로 60 1층
                       
                     
                 </div>

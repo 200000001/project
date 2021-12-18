@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정아쿠아</title>
+    <link rel="stylesheet" href="./w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    </head>
+    <style>
+        
+    </style>
+    <script>
+                function w3_open(){
+            document.getElementById("mySidebar").style.display = "block";
+            
+        }
+        function w3_close(){
+            document.getElementById("mySidebar").style.display = "none";
+            
+        }  
+
+                function cartAppend(e){
+            const x = document.getElementById(e);
+            const ele = document.getElementById("cart");
+            ele.appendChild(x);
+        }
+        function cartRemove(e){
+            const x = document.getElementById(e);
+            const cart = document.getElementById("cart");
+            const list = document.getElementById("list");
+            cart.removeChild(x);
+            list.appendChild(x);
+        }
+    </script>
+        <style>
+            #cart, #list{
+                display: flex;
+            }
+            #img1, #img2, #img3  {
+                flex: 3;
+            }
+        </style>
+<body>
+    <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close ×</button>
+       <div class="w3-dropdown-hover">
+            <button class="w3-button">물고기<i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="#" class="w3-bar-item w3-button">난태생</a>
+              <a href="#" class="w3-bar-item w3-button">메기과</a>
+              <a href="#" class="w3-bar-item w3-button">새우</a>
+              <a href="#" class="w3-bar-item w3-button">카라신과</a>
+              <a href="#" class="w3-bar-item w3-button">베타</a>
+              <a href="#" class="w3-bar-item w3-button">해수어</a>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">수초 <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="#" class="w3-bar-item w3-button">전경수초</a>
+              <a href="#" class="w3-bar-item w3-button">중경수초</a>
+              <a href="#" class="w3-bar-item w3-button">후경수초</a>
+              <a href="#" class="w3-bar-item w3-button">부상수초</a>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">용품 <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="#" class="w3-bar-item w3-button">수조</a>
+              <a href="#" class="w3-bar-item w3-button">조명</a>
+              <a href="#" class="w3-bar-item w3-button">여과기</a>
+              <a href="#" class="w3-bar-item w3-button">히터</a>
+              <a href="#" class="w3-bar-item w3-button">바닥재</a>
+              <a href="#" class="w3-bar-item w3-button">사료</a>
+              
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">갤러리 <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="#" class="w3-bar-item w3-button">물고기 사진</a>
+              <a href="#" class="w3-bar-item w3-button">어항 사진</a>
+              <a href="#" class="w3-bar-item w3-button">수초 사진</a>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">어항 내부 list <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+              <a href="./list.html" class="w3-bar-item w3-button">물고기 list</a>
+
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-button">마이페이지 <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block">
+                <a href="#" class="w3-bar-item w3-button">장바구니</a>
+                <a href="#" class="w3-bar-item w3-button">주문 조회</a>
+                <a href="#" class="w3-bar-item w3-button">1:1 문의</a>
+            </div>
+          </div>
+          
+        </div>
+        </div>
+    <div class="w3-aqua">
+        <button class="w3-button w3-aqua w3-xlarge" onclick="w3_open()">☰</button>
+        <span class="w3-xlarge">JungAqua</span>
+    </div>
+    <div class="container">
+        <header>
+            <a href="./index.html"><img src="./photo/logo.png" alt="logo" width="200px"></a>
+        </header>
+        <nav>
+                <ul>
+                    <li><a href="./fish.html">생물</a></li>
+                    <li><a href="./plant.html">수초</a></li>
+                    <li><a href="./product.html">용품</a></li>
+                    <li><a href="./register.html">갤러리</a></li>
+                    <li><a href="./add.html">마이페이지(장바구니)</a></li>
+                </ul>
+            </nav>
+
+
+
+            <h2> 장바구니 </h2>
+            <div id="cart" style="width: 100%; height: 250px; border: 1px solid gray;">
+        
+            </div>
+            <h2> 생물리스트 </h2>
+        <div id="list" style="width: 100%; height: 300px; border: 1px solid gray;">
+            <div id="img1" >
+                <img src="./photo/구피.jpg" width="150" height="100">
+                <div>
+                  <p>가격:10,000원/ 이름:구피</p>
+                  <button onclick="cartAppend('img1');">추가</button>
+                  <button onclick="cartRemove('img1');">삭제</button>
+                </div>
+            </div>
+            <div id="img2">
+                <img src="./photo/니모.jpg" width="150" height="100">
+                <div>
+                  <p>가격:30,000원/ 이름:니모</p>
+                  <button onclick="cartAppend('img2');">추가</button>
+                  <button onclick="cartRemove('img2');">삭제</button>
+                </div>
+            </div>
+            <div id="img3">
+                <img src="./photo/디스커스.jpg" width="150" height="100">
+                <div >
+                <p>가격:100,000원/ 이름:디스커스</p>
+                  <button onclick="cartAppend('img3');">추가</button>
+                  <button onclick="cartRemove('img3');">삭제</button>
+                </div>
+            </div>
+ 
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <footer class="w3-blue w3-margin-top"  style="height:150px;">
+                &copy; JungAqua
+                <div class="w3-row"> 
+                    <div class="w3-col s4  w3-container" >
+                        <h5 id="Contact"> Contact Us</h5>
+                        <ul>
+                          <li>Phone: 010 6620 xxxx(09~17시)</li>
+                          <li>Email: <a href="mailto:j1118@donga.ac.kr" title="Email Us">j1118@donga.ac.kr</a></li>
+                          
+                          </ul>
+                        
+                    </div>
+                    <div class="Contact w3-col s4  w3-container" >
+                       
+                        <h5> Follow Us</h5>
+                        <a href="https://www.facebook.com/profile.php?id=100008326122713"><i class="fab fa-facebook" style="font-size:30px;color:white"></i></a>
+                        <a href="https://www.instagram.com/minseok8534/"><i class="fab fa-instagram" style="font-size:30px;color:white"></i></a>
+                      
+                        
+                    </div>
+                    <div class="w3-col s4 w3-container" >
+                        <h5> About JungAqua</h5>
+                        항상 정직하게 장사하겠습니다.<br>
+    
+    
+    
+    
+    
+    
+                        위치: 경남 김해시 가야로 60 1층
+                          
+                        
+                    </div>
+                 </div>
+                 </footer>
+        </div>    
+</body>
+</html>
